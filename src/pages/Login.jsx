@@ -12,12 +12,40 @@ const Login = () => {
         </div>
         <div className="my-2">
           <h3 className="font-montserrat font-[600] text-[22px]">SIGN IN</h3>
-          <p className="font-montserrat text-labelColor text-label mt-1">Enter your credentials to access your account</p>
+          <p className="font-montserrat text-labelColor text-label mt-1">
+            Enter your credentials to access your account
+          </p>
         </div>
         <form className="flex flex-col text-left p-3 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer" htmlFor="email">Email</label>
-            <input type="email" />
+            <label
+              className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="login-input"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label
+              className="font-montserrat text-label text-labelColor hover:after:content-['admin'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="login-input"
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
           </div>
         </form>
       </div>
