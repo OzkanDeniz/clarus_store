@@ -3,13 +3,13 @@ import { createContext } from "react";
 export const AuthContext = createContext()
 // export const {Provider} = createContext()
 
-const AuthProvider =()=>{
+const AuthProvider =({children})=>{
 
     return(
-        <AuthContext.Provider>
-            
+        <AuthContext.Provider value={null}>
+            {children}
         </AuthContext.Provider>
     )
-    
-}
 
+}
+export default AuthProvider
