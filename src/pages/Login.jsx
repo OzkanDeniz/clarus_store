@@ -48,6 +48,7 @@ const Login = () => {
             />
           </div>
         </form>
+        <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sign In</button>
       </div>
     </div>
   );
