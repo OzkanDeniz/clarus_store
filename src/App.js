@@ -1,22 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
-import NotFound from "./pages/NotFound";
+import AppRouter from "./router/AppRouter";
+
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+     <AppRouter/>
     </div>
   );
 }
