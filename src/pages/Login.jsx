@@ -49,8 +49,8 @@ const Login = () => {
           </div>
         </form>
         <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sign In</button>
-        <div className="flex justify-center items-center flex-wrap">
-          <span className="text-label font-montserrat font-[400] text-labelColor">Forgot your password?</span>
+        <div className="flex justify-center items-center flex-wrap mt-2">
+          <span className="text-label font-montserrat font-[500] text-labelColor">Forgot your password?</span>
           <span className="text-main text-[14px] font-montserrat font-[500] underline ml-1">Reset your password</span>
         </div>
       </div>
