@@ -41,11 +41,11 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div>
-          <ul>
+        <div className={`${show ? "flex flex-col pb-2 " : "hidden"} md:flex md:flex-row flex-1 items-center` }>
+          <ul className="md:flex md:space-x-6">
             {navigation.map((item) => (
-              <li key={item.title}>
-                <NavLink to={item.path}>{item.title}</NavLink>
+              <li className="text-gray-700 font-medium flex justify-center" key={item.title}>
+                <NavLink className={`block hover:bg-main rounded-full py-2 px-4 hover:text-white`} to={item.path}>{item.title}</NavLink>
               </li>
             ))}
           </ul>
