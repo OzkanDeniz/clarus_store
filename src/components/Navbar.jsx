@@ -33,15 +33,20 @@ const Navbar = () => {
             <span>Clarusway</span>
           </a>
           <div className="md:hidden">
-            <button onClick={()=>setshow(!show)} className="text-gray-500 hover:text-gray-800">
+            <button
+              onClick={() => setshow(!show)}
+              className="text-gray-500 hover:text-gray-800"
+            >
               {show ? closeNavbar : openNavbar}
             </button>
           </div>
         </div>
         <div>
           <ul>
-            {navigation.map(item=>(
-              <li key={item.title}><NavLink>{item.path}</NavLink></li>
+            {navigation.map((item) => (
+              <li key={item.title}>
+                <NavLink to={item.path}>{item.title}</NavLink>
+              </li>
             ))}
           </ul>
         </div>
