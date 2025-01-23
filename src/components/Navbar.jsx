@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { closeNavbar, openNavbar } from "../helper/icons";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 const navigation = [
   {
     title: "Home",
@@ -39,7 +40,9 @@ const Navbar = () => {
         </div>
         <div>
           <ul>
-            
+            {navigation.map(item=>(
+              <li key={item.title}><NavLink>{item.path}</NavLink></li>
+            ))}
           </ul>
         </div>
       </div>
