@@ -9,7 +9,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.toLocaleLowerCase() === "admin@aa.com" && pass === "admin") {
-      // login({email,password})
+      login({email,password})
     } else {
       alert("Kullanıcı bilgileri yanlış");
     }
