@@ -4,16 +4,15 @@ import { AuthContext } from "../context/AuthProvider";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const {login} = useContext(AuthContext)
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.toLocaleLowerCase() === "admin@aa.com" && pass === "admin") {
-      login({email,pass})
+      login({ email, pass });
     } else {
       alert("Kullanıcı bilgileri yanlış");
     }
-    console.log({ email, pass });
   };
   return (
     <div className="loginDiv">
