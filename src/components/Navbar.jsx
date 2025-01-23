@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { closeNavbar, openNavbar } from "../helper/icons";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 const navigation = [
   {
     title: "Home",
@@ -20,6 +20,8 @@ const navigation = [
 
 const Navbar = () => {
   const [show, setshow] = useState(false);
+  const location = useLocation()
+  console.log(location.pathname)
   return (
     <nav className="bg-navbarColor md:text-sm">
       <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
