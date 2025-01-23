@@ -2,13 +2,27 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { closeNavbar, openNavbar } from "../helper/icons";
 import { useState } from "react";
+const navigation = [
+  {
+    title: "Home",
+    path: "/dashboard",
+  },
+  {
+    title: "Products",
+    path: "/dashboard/products",
+  },
+  {
+    title: "About",
+    path: "/dashboard/about",
+  },
+];
 
 const Navbar = () => {
   const [show, setshow] = useState(false);
   return (
     <nav className="bg-navbarColor md:text-sm">
       <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
-        <div className="">
+        <div className="flex items-center justify-between py-5">
           <a
             href="https://clarusway.com/"
             target="true"
@@ -22,6 +36,11 @@ const Navbar = () => {
               {show ? closeNavbar : openNavbar}
             </button>
           </div>
+        </div>
+        <div>
+          <ul>
+            
+          </ul>
         </div>
       </div>
     </nav>
