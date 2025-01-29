@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Products = () => {
-  const [products, setproducts] = useState([]);
-  const [search, setsearch] = useState("");
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
 
   const getData = async () => {
     try {
-      const res = await axios.get(
+      const {data} = await axios.get(
         `https://dummyjson.com/products/search?q=${search}`
       );
-      console.log(res);
+      setProducts(data.products)
+      
     } catch (error) {
       console.log(error);
     }
