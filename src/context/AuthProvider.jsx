@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 // export const {Provider} = createContext()
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem(user)) || null);
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")) || null);
   const navigate = useNavigate();
   console.log(user);
   const login = (info) => {
