@@ -14,6 +14,11 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout =()=>setUser(null)
+
+  useEffect(() => {
+   sessionStorage.setItem("user",JSON.stringify(user))
+  }, [])
+  
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       {children}
