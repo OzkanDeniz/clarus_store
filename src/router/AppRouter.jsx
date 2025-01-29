@@ -12,7 +12,7 @@ const AppRouter = () => {
   return (
     // <BrowserRouter>
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<PrivateRouter />}>

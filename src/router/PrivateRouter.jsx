@@ -7,6 +7,7 @@ const PrivateRouter = () => {
   const { user } = useContext(AuthContext);
   return user ? (
     <>
+      <Navbar />
       <Outlet />
     </>
   ) : (
