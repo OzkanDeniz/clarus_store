@@ -1,10 +1,27 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const ProductDetail = () => {
-  const { state } = useLocation();
-  const navigate = useNavigate()
-  console.log(state);
+  // const { state } = useLocation();
+  const [state, setState] = useState({});
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const getDetailData = async () => {
+    try {
+      const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
+      console.log(data);
+      setState(data)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getDetailData();
+  }, []);
 
   const { thumbnail, title, description, category, price, images } = state;
   return (
@@ -20,7 +37,7 @@ const ProductDetail = () => {
               />
             </div>
             <div className="grid grid-cols-3 gap-4 row-span-1">
-              {images.slice(0, 3).map((item, i) => (
+              {images?.slice(0, 3).map((item, i) => (
                 <div key={i}>
                   <img
                     className="h-[15vh] w-full rounded-lg"
@@ -46,10 +63,16 @@ const ProductDetail = () => {
               </div>
             </div>
             <div className="flex justify-end gap-3 mt-4">
-              <button onClick={()=>navigate(-1)} className="border rounded-lg bg-labelColor text-white p-2">
+              <button
+                onClick={() => navigate(-1)}
+                className="border rounded-lg bg-labelColor text-white p-2"
+              >
                 Geri
-              </button >
-              <button  onClick={()=>navigate("/dashboard")} className="border rounded-lg bg-main text-white p-2">
+              </button>
+              <button
+                onClick={() => navigate("/dashboard")}
+                className="border rounded-lg bg-main text-white p-2"
+              >
                 Ana Sayfaya Dön
               </button>
             </div>
