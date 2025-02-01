@@ -1,4 +1,5 @@
 import React from "react";
+import { testimonials } from "../helper/data";
 
 const Testimonial = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
